@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_045640) do
     t.string "provider", null: false
     t.string "uid", null: false
     t.string "name", null: false
-    t.string "image", null: false
+    t.string "image_url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
