@@ -17,7 +17,7 @@ class User < ApplicationRecord
     end
   end
 
-  privete
+  private
 
   def check_all_events_finished
     now = TIme.zone.now
