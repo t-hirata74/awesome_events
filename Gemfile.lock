@@ -37,6 +37,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_storage_validations (0.8.9)
+      rails (>= 5.2.0)
     activejob (6.0.3.5)
       activesupport (= 6.0.3.5)
       globalid (>= 0.3.6)
@@ -74,6 +76,14 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    elasticsearch (7.11.1)
+      elasticsearch-api (= 7.11.1)
+      elasticsearch-transport (= 7.11.1)
+    elasticsearch-api (7.11.1)
+      multi_json
+    elasticsearch-transport (7.11.1)
+      faraday (~> 1)
+      multi_json
     erubi (1.10.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -100,9 +110,24 @@ GEM
     hashie (4.1.0)
     i18n (1.8.8)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.1)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jwt (2.2.2)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -115,6 +140,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
     mimemagic (0.3.5)
+    mini_magick (4.11.0)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.3)
@@ -187,6 +213,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.0.3)
+    ruby-vips (2.0.17)
+      ffi (~> 1.9)
     ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -199,6 +227,10 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    searchkick (4.3.1)
+      activemodel (>= 5)
+      elasticsearch (>= 6)
+      hashie
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -247,12 +279,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_storage_validations (~> 0.8.8)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   factory_bot_rails
   hamlit-rails (~> 0.2.3)
+  image_processing (~> 1.2)
   jbuilder (~> 2.7)
+  kaminari (~> 1.2.0)
   listen (~> 3.2)
   omniauth (~> 1.9.1)
   omniauth-github (~> 1.4.0)
@@ -261,6 +296,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   rails-i18n (~> 6.0.0)
   sass-rails (>= 6)
+  searchkick (~> 4.3.0)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
