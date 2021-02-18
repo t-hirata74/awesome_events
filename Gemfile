@@ -66,6 +66,13 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
+
+  gem 'brakeman'
+  # test/test_helper.rbやspec_helper.rbにrequireの設定をする
+  gem 'simplecov', require: false, group: :test
+
+  # テストのカバレッジを表示してくれるWebサービス
+  gem 'coveralls', require: false, group: :test
 end
 
 group :test do
