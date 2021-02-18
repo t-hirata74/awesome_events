@@ -75,6 +75,8 @@ group :development do
   gem 'brakeman'
   # test/test_helper.rbやspec_helper.rbにrequireの設定をする
   gem 'simplecov', require: false, group: :test
+
+  gem 'rack-mini-profiler', require: false
 end
 
 group :test do
