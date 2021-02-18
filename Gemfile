@@ -52,6 +52,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
+
+  # テストのカバレッジを表示してくれるWebサービス
+  gem 'coveralls', require: false, group: :test
+  # パフォーマンス測定してくれるWebサービス
+  gem "skylight"
 end
 
 group :development do
@@ -70,9 +75,6 @@ group :development do
   gem 'brakeman'
   # test/test_helper.rbやspec_helper.rbにrequireの設定をする
   gem 'simplecov', require: false, group: :test
-
-  # テストのカバレッジを表示してくれるWebサービス
-  gem 'coveralls', require: false, group: :test
 end
 
 group :test do
