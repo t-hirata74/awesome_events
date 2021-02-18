@@ -31,5 +31,5 @@ jobs:
         bin/rails db:create
         bin/rails db:migrate
         bin/yarn install
-        bin/rails test
+        COVERALLS_REPO_TOKEN=${{secrets.COVERALLS_REPO_TOKEN}}  bin/rails test
         bin/rails test:system
